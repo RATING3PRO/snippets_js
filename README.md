@@ -5,6 +5,7 @@
 ## 目录
 
 - [Docker Hub 反向代理 (docker-hub-proxy.js)](#docker-hub-反向代理)
+- [GHCR 反向代理 (ghcr-proxy.js)](#ghcr-反向代理)
 - [Telegram API 反向代理 (telegram-proxy.js)](#telegram-api-反向代理)
 - [部署指南](#部署指南)
 
@@ -27,6 +28,19 @@
   ```bash
   docker pull docker.yourdomain.com/library/nginx
   ```
+
+## GHCR 反向代理
+对 GitHub Container Registry (`ghcr.io`) 进行反代，可以解决国内拉取 GitHub 开源项目容器镜像非常慢甚至断连的问题。
+
+**特点:**
+* GHCR 机制与 Docker Hub 类似，此脚本依然处理了 3xx 云存储跳转时的鉴权头丢弃问题，防止下载报云存储签名错误。
+* 和 Docker Hub 版一样的强缓存策略。
+
+**使用方法:**
+直接把镜像开头的 `ghcr.io` 替换为你的代理域名：
+```bash
+docker pull ghcr.yourdomain.com/username/repository:tag
+```
 
 ## Telegram API 反向代理
 在国内开发 Telegram Bot 时，由于 `api.telegram.org` 无法被直接访问，可以通过这个脚本将其代理至 Cloudflare 域名。
