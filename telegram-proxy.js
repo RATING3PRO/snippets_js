@@ -6,6 +6,11 @@ export default {
     // 目标 Telegram API 地址
     const TELEGRAM_API = "https://api.telegram.org";
 
+    // 访问根路径时直接重定向到源站
+    if (url.pathname === "/") {
+      return Response.redirect(TELEGRAM_API, 302);
+    }
+
     // 构造请求的 URL
     const upstreamUrl = new URL(url.pathname, TELEGRAM_API);
     upstreamUrl.search = url.search;
