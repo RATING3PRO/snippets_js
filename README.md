@@ -7,6 +7,7 @@
 - [Docker Hub 反向代理 (docker-hub-proxy.js)](#docker-hub-反向代理)
 - [GHCR 反向代理 (ghcr-proxy.js)](#ghcr-反向代理)
 - [Telegram API 反向代理 (telegram-proxy.js)](#telegram-api-反向代理)
+- [DNS over HTTPS 反向代理 (doh-proxy.js)](#DoH-反向代理)
 - [部署指南](#部署指南)
 
 ## Docker Hub 反向代理
