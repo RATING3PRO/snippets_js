@@ -46,6 +46,10 @@ docker pull ghcr.yourdomain.com/username/repository:tag
 ## Telegram API 反向代理
 在国内开发 Telegram Bot 时，由于 `api.telegram.org` 无法被直接访问，可以通过这个脚本将其代理至 Cloudflare 域名。
 
+## DoH 反向代理
+
+在某些网络受限环境中无法直接访问公共DoH服务，可通过这个脚本反向代理
+
 ## 部署指南
 
 以部署上述的任意脚本为例：
